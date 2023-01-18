@@ -1,0 +1,22 @@
+CREATE TABLE sagas (
+  id INTEGER(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL,
+  author VARCHAR(255) NOT NULL,
+  music VARCHAR(255) NOT NULL,
+  season SMALLINT(5) UNSIGNED NOT NULL,
+  creation_date VARCHAR(255) NOT NULL,
+  netophonix_url VARCHAR(500),
+  website_url VARCHAR(500),
+  picture_url VARCHAR(500),
+  licence_id INTEGER(11) UNSIGNED,
+  country_id INTEGER(11) UNSIGNED NOT NULL,
+  status_id INTEGER(11) UNSIGNED NOT NULL,
+  category_id INTEGER(11) UNSIGNED NOT NULL,
+  FOREIGN KEY (licence_id) REFERENCES licences(id),
+  FOREIGN KEY (country_id) REFERENCES countries(id),
+  FOREIGN KEY (status_id) REFERENCES status(id),
+  FOREIGN KEY (category_id) REFERENCES categories(id),
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_general_ci';
