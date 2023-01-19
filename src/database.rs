@@ -1,6 +1,4 @@
-use diesel::{
-    insert_into, prelude::*, query_builder::InsertStatement, query_dsl::methods::ExecuteDsl,
-};
+use diesel::prelude::*;
 use std::env;
 
 pub fn connect() -> MysqlConnection {
