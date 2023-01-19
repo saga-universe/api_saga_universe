@@ -1,6 +1,8 @@
 CREATE TABLE groups (
   id INTEGER(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
   name VARCHAR(255) NOT NULL,
+  website_url VARCHAR(500),
+  netophonix_url VARCHAR(500),
   group_types_id INTEGER(11) UNSIGNED,
   FOREIGN KEY (group_types_id) REFERENCES group_types(id),
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
